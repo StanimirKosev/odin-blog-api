@@ -33,9 +33,14 @@ const login_post = (req, res, next) => {
 
     bcrypt.compare(req.body.password, user.password, (err, result) => {
       if (result) {
-        jwt.sign({ user }, process.env.SECRET_KEY, (err, token) => {
-          res.json({ token, user });
-        });
+        jwt.sign(
+          { user },
+          process.env.SECRET_KEY,
+          { expiresIn: "12h" },
+          (err, token) => {
+            res.json({ token, user });
+          }
+        );
       } else {
         return next(null, false, { message: "Incorrect password." });
       }
@@ -53,7 +58,8 @@ const verify_token = (req, res, next) => {
       if (err) {
         return next(err);
       } else {
-        res.json({ authData });
+        //res.json({ authData });
+        next();
       }
     });
   } else {
