@@ -6,7 +6,7 @@ const commentSchema = mongoose.model(
   new Schema({
     author: { type: String, required: true },
     text: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now, required: true },
+    createdAt: String,
   })
 );
 
