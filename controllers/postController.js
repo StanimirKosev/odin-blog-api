@@ -6,7 +6,7 @@ exports.create_posts = (req, res, next) => {
   new Post({
     title,
     text,
-    createdAt: DateTime.now().toLocaleString(DateTime.DATE_MED),
+    createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_MED),
   }).save((err) => {
     return next(err);
   });

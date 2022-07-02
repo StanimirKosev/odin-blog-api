@@ -48,3 +48,110 @@ header {
 .header-links > *:hover {
   color: #db0042;
 }
+
+.main {
+  padding: 180px 0;
+}
+
+.main-container {
+  margin: 0 220px;
+  padding: 0 170px;
+}
+
+.blog-item,
+.comment-item {
+  margin-top: 50px;
+}
+
+.blog-header,
+.comment-header {
+  margin-bottom: 13px;
+}
+
+.blog-title,
+.comment-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.blog-title:hover {
+  color: #db0042;
+}
+
+.blog-text,
+.comment-txt {
+  color: #929292;
+}
+
+.blog-footer,
+.comment-footer {
+  margin-top: 13px;
+  color: #929292;
+}
+
+.blog-date-read-one {
+  margin-bottom: 31px;
+  color: #929292;
+}
+
+.blog-header-read-one {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.blog-text.read-one {
+  margin-bottom: 30px;
+}
+
+.comments-title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+form > label {
+  display: flex;
+  flex-direction: column;
+}
+
+form > label > input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #929292;
+  margin-bottom: 10px;
+  font-size: inherit;
+}
+
+form > label > input:focus {
+  outline: none !important;
+  border-color: #db0042;
+}
+
+button {
+  padding: 7px;
+  font-size: inherit;
+  border-radius: 6px;
+  border: 1px solid #db0042;
+  background-color: #db0042;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.comment-item {
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 13px 0 #c9c9c9;
+}

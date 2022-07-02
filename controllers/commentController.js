@@ -21,11 +21,12 @@ exports.create_comment = [
       res.json({ errors: errors.array() });
     }
 
-    const { author, text } = req.body;
+    const { author, text, blogid } = req.body;
     new Comment({
       author,
       text,
-      createdAt: DateTime.now().toLocaleString(DateTime.DATE_MED),
+      createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_MED),
+      blogid,
     }).save((err) => {
       if (err) {
         return next(err);

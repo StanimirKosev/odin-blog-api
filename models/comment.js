@@ -7,6 +7,7 @@ const commentSchema = mongoose.model(
     author: { type: String, required: true },
     text: { type: String, required: true },
     createdAt: String,
+    blogid: String,
   })
 );
 
