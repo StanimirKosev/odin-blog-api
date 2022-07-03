@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Main } from "./Components.js/Main";
 import { UpdatePost } from "./Components.js/UpdatePost";
 import React, { useState, useEffect } from "react";
+import { Blog } from "./Components.js/Blog";
 
 function App() {
   const [user, setUser] = useState();
@@ -55,21 +56,32 @@ function App() {
             ? posts.map((post) => (
                 <Route
                   key={post._id}
-                  path={`/updatepost${post._id}`}
+                  path={`/updatepost/${post._id}`}
                   element={
-                    <UpdatePost
-                      user={user}
-                      token={token}
+                    <UpdatePost user={user} token={token} blogid={post._id} />
+                  }
+                />
+              ))
+            : null}
+          {posts
+            ? posts.map((post) => (
+                <Route
+                  path={`/posts/${post._id}`}
+                  key={post._id}
+                  element={
+                    <Blog
+                      key={post._id}
+                      title={post.title}
+                      message={post.text}
+                      date={post.createdAt}
+                      ifReadOne={true}
                       blogid={post._id}
-                      titleOld={post.title}
-                      textOld={post.text}
+                      token={token}
                     />
                   }
                 />
               ))
             : null}
-
-          <Route />
         </Routes>
       </Router>
     </div>

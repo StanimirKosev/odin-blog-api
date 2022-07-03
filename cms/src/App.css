@@ -78,10 +78,12 @@ form > label > input:focus {
   border-color: #db0042;
 }
 
-.blog-item {
+.blog-item,
+.comment-item {
   margin-top: 50px;
 }
 
+.comment-header,
 .blog-header {
   margin-bottom: 13px;
   display: flex;
@@ -89,7 +91,8 @@ form > label > input:focus {
   gap: 15px;
 }
 
-.blog-title {
+.blog-title,
+.comment-title {
   color: #000000;
   font-weight: bold;
   font-size: 22px;
@@ -100,11 +103,13 @@ form > label > input:focus {
   color: #db0042;
 }
 
-.blog-text {
+.blog-text,
+.comment-txt {
   color: #929292;
 }
 
-.blog-footer {
+.blog-footer,
+.comment-footer {
   margin-top: 13px;
   color: #929292;
 }
@@ -115,4 +120,32 @@ form > label > input:focus {
 
 .logged-info:hover {
   color: #9c002f;
+}
+
+.blog-date-read-one {
+  margin-bottom: 31px;
+  color: #929292;
+}
+
+.blog-header-read-one {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.blog-text.read-one {
+  margin-bottom: 30px;
+}
+
+.comments-title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.comment-item {
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 13px 0 #c9c9c9;
 }

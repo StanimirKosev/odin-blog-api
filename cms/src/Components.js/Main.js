@@ -33,7 +33,7 @@ export const Main = ({ token, user, posts }) => {
           ? posts.map((post) => (
               <Blog
                 key={post._id}
-                titleBlog={post.title}
+                title={post.title}
                 message={post.text}
                 date={post.createdAt}
                 blogid={post._id}
