@@ -10,7 +10,7 @@ function App() {
 
   // read/get all posts
   useEffect(() => {
-    fetch("http://localhost:5000/api/posts")
+    fetch("https://boiling-woodland-03730.herokuapp.com/api/posts")
       .then((res) => {
         return res.json();
       })
@@ -24,11 +24,11 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<Main posts={posts} />} />
+          <Route path="/odin-blog-api" element={<Main posts={posts} />} />
           {posts
             ? posts.map((post) => (
                 <Route
-                  path={`posts/${post._id}`}
+                  path={`/odin-blog-api/posts/${post._id}`}
                   key={post._id}
                   element={
                     <Blog

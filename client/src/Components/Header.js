@@ -5,7 +5,7 @@ export const Header = () => {
     <header>
       <div className="header-container">
         <div>
-          <a className="logo" href="/">
+          <a className="logo" href="/odin-blog-api">
             Stanimir's Blog
           </a>
         </div>

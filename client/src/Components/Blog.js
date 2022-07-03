@@ -9,11 +9,14 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
   // post/create comment
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/api/posts/${blogid}/comments`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ author, text, blogid }),
-    }).then(() => {
+    fetch(
+      `https://boiling-woodland-03730.herokuapp.com/api/posts/${blogid}/comments`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ author, text, blogid }),
+      }
+    ).then(() => {
       setAuthor("");
       setText("");
     });
@@ -21,7 +24,9 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
 
   // get/read all comments
   useEffect(() => {
-    fetch(`http://localhost:5000/api/posts/${blogid}/comments`)
+    fetch(
+      `https://boiling-woodland-03730.herokuapp.com/api/posts/${blogid}/comments`
+    )
       .then((res) => {
         return res.json();
       })
