@@ -67,7 +67,6 @@ exports.update_comment = (req, res, next) => {
 };
 
 exports.delete_comment = (req, res, next) => {
-  const { author, text } = req.body;
   Comment.findByIdAndDelete(req.params.commentid, (err) => {
     if (err) {
       return next(err);

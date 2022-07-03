@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Blog } from "./Blog";
 
-export const Main = ({ token }) => {
-  const [posts, setPosts] = useState();
+export const Main = ({ token, user, posts }) => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
+  // create/post one post
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/api/posts`, {
+    fetch("http://localhost:5000/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,19 +21,14 @@ export const Main = ({ token }) => {
     });
   };
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/posts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setPosts(data.posts);
-      });
-  }, []);
-
   return (
     <div className="main">
       <div className="main-container">
+        {user ? null : (
+          <a className="logged-info" href="/login">
+            Log in to start editing.
+          </a>
+        )}
         {posts
           ? posts.map((post) => (
               <Blog
@@ -42,6 +37,7 @@ export const Main = ({ token }) => {
                 message={post.text}
                 date={post.createdAt}
                 blogid={post._id}
+                token={token}
               />
             ))
           : null}
@@ -68,7 +64,7 @@ export const Main = ({ token }) => {
               value={text}
             />
           </label>
-          <button onClick={(e) => handleSubmit(e)}>Send</button>
+          <button onClick={(e) => handleSubmit(e)}>Create new post</button>
         </form>
       </div>
     </div>

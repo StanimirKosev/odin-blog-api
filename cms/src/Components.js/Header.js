@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = ({ user }) => {
+  const navigate = useNavigate();
   return (
     <header>
       <div>
@@ -9,7 +11,7 @@ export const Header = ({ user }) => {
         </a>
       </div>
       <div>
-        <button>Log in</button>
+        <button onClick={() => navigate("/login")}>Log in</button>
       </div>
     </header>
   );

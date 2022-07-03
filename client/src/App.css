@@ -144,6 +144,7 @@ button {
   border: 1px solid #db0042;
   background-color: #db0042;
   cursor: pointer;
+  color: white;
 }
 
 button:hover {

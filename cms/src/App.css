@@ -84,6 +84,9 @@ form > label > input:focus {
 
 .blog-header {
   margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .blog-title {
@@ -104,4 +107,12 @@ form > label > input:focus {
 .blog-footer {
   margin-top: 13px;
   color: #929292;
+}
+
+.logged-info {
+  color: #db0042;
+}
+
+.logged-info:hover {
+  color: #9c002f;
 }

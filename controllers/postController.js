@@ -46,7 +46,6 @@ exports.update_post = (req, res, next) => {
 };
 
 exports.delete_post = (req, res, next) => {
-  const { title, text } = req.body;
   Post.findByIdAndDelete(req.params.id, (err) => {
     if (err) {
       return next(err);
