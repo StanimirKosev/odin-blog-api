@@ -7,7 +7,6 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
   const [comments, setComments] = useState(null);
 
   const handleSubmit = (e) => {
-    console.log(JSON.stringify({ author, text, blogid }));
     e.preventDefault();
     fetch(`http://localhost:5000/api/posts/${blogid}/comments`, {
       method: "POST",

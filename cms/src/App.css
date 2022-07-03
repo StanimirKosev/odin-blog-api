@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  height: 100px;
+  padding: 43px 60px 35px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  color: #db0042;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+button {
+  padding: 7px;
+  font-size: inherit;
+  border-radius: 6px;
+  border: 1px solid #db0042;
+  background-color: #db0042;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.main {
+  padding: 180px 0;
+}
+
+.main-container {
+  margin: 0 220px;
+  padding: 0 170px;
+}
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+form > label {
+  display: flex;
+  flex-direction: column;
+}
+
+form > label > input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #929292;
+  margin-bottom: 10px;
+  font-size: inherit;
+}
+
+form > label > input:focus {
+  outline: none !important;
+  border-color: #db0042;
+}
+
+.blog-item {
+  margin-top: 50px;
+}
+
+.blog-header {
+  margin-bottom: 13px;
+}
+
+.blog-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.blog-title:hover {
+  color: #db0042;
+}
+
+.blog-text {
+  color: #929292;
+}
+
+.blog-footer {
+  margin-top: 13px;
+  color: #929292;
+}
