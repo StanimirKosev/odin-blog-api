@@ -47,14 +47,14 @@ exports.get_comments = (req, res, next) => {
     });
 };
 
-exports.get_single_comment = (req, res, next) => {
+/*exports.get_single_comment = (req, res, next) => {
   Comment.findById(req.params.commentid).exec((err, comment) => {
     if (err) {
       return next(err);
     }
     res.json({ comment });
   });
-};
+};*/
 
 exports.update_comment = (req, res, next) => {
   const { author, text } = req.body;

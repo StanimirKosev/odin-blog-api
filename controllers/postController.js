@@ -26,14 +26,14 @@ exports.get_posts = (req, res, next) => {
     });
 };
 
-exports.get_single_post = (req, res, next) => {
+/*exports.get_single_post = (req, res, next) => {
   Post.findById(req.params.id).exec((err, post) => {
     if (err) {
       return next(err);
     }
     res.json({ post });
   });
-};
+};*/
 
 exports.update_post = (req, res, next) => {
   const { title, text } = req.body;

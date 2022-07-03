@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [posts, setPosts] = useState();
 
+  // read/get all posts
   useEffect(() => {
     fetch("http://localhost:5000/api/posts")
       .then((res) => {

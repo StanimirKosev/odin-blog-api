@@ -6,6 +6,7 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
   const [text, setText] = useState("");
   const [comments, setComments] = useState(null);
 
+  // post/create comment
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`http://localhost:5000/api/posts/${blogid}/comments`, {
@@ -18,6 +19,7 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
     });
   };
 
+  // get/read all comments
   useEffect(() => {
     fetch(`http://localhost:5000/api/posts/${blogid}/comments`)
       .then((res) => {

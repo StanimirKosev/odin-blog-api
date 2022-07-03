@@ -24,7 +24,7 @@ router
 // api/posts/:id - read, update and delete single post
 router
   .route("/posts/:id")
-  .get(postController.get_single_post)
+  //.get(postController.get_single_post) not used
   .put(userController.verify_token, postController.update_post)
   .delete(userController.verify_token, postController.delete_post);
 
@@ -37,7 +37,7 @@ router
 // api/posts/:postid/comments/:commentid - read, update and delete single comment
 router
   .route("/posts/:postid/comments/:commentid")
-  .get(commentController.get_single_comment)
+  //.get(commentController.get_single_comment) not used
   .put(userController.verify_token, commentController.update_comment)
   .delete(userController.verify_token, commentController.delete_comment);
 
