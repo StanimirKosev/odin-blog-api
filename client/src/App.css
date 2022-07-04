@@ -30,6 +30,8 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f2f2f2;
 }
 
 .logo {
@@ -79,7 +81,7 @@ header {
   color: #000000;
   font-weight: bold;
   font-size: 22px;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .blog-title:hover {
@@ -340,11 +342,6 @@ button:hover {
 
 /* mobile menu */
 @media (max-width: 700px) {
-  .container-inner {
-    border-bottom: 2px solid #f2f2f2;
-    padding-bottom: 15px;
-  }
-
   .navigation-dekstop {
     display: none;
   }

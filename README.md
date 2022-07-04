@@ -4,16 +4,23 @@ The Odin Project Curriculum - Full Stack JavaScript Path - NodeJS Section - Proj
 
 Goal: Create an API only backend with two front-ends, one for reading and commenting and the other for writing, editing and publishing blog posts.
 
-## Technologies:
+## Technologies and tools:
 
 - MERN Stack (MongoDB, ExpressJS, React, Node.js)
+- JSON Web Token
+- Bcryptjs
 
-[Cliet demo](https://stanimirkosev.github.io/odin-blog-api/)
+## Features:
 
-## CMS(Content management system) gif
+- Dark Theme
+- Mobile Responsivness
+
+[Client demo](https://stanimirkosev.github.io/odin-blog-api/) :wave:
+
+## The frontend for writing,editing and publishing. (cms folder)
 
 ![cms gif](./views/gifs/cms.gif)
 
-## Client gif
+## The frontend for reading and writing comments. (client folder)
 
 ![client gif](./views/gifs/client.gif)

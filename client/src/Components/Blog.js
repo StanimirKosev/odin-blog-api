@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Comment } from "./Comment";
+import { useNavigate } from "react-router-dom";
 
 export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
   const [author, setAuthor] = useState("");
   const [text, setText] = useState("");
   const [comments, setComments] = useState(null);
+
+  const navigate = useNavigate();
 
   // post/create comment
   const handleSubmit = (e) => {
@@ -86,9 +89,12 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
       ) : (
         <div className="blog-item">
           <div className="blog-header">
-            <a className="blog-title" href={`/odin-blog-api/posts/${blogid}`}>
+            <div
+              className="blog-title"
+              onClick={() => navigate(`/odin-blog-api/posts/${blogid}`)}
+            >
               {title}
-            </a>
+            </div>
           </div>
           <div className="blog-text">{message}</div>
           <div className="blog-footer">{date}</div>
