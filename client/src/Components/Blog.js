@@ -86,7 +86,7 @@ export const Blog = ({ title, message, date, blogid, ifReadOne }) => {
       ) : (
         <div className="blog-item">
           <div className="blog-header">
-            <a className="blog-title" href={`posts/${blogid}`}>
+            <a className="blog-title" href={`/odin-blog-api/posts/${blogid}`}>
               {title}
             </a>
           </div>

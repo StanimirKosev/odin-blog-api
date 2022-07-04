@@ -24,7 +24,7 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/odin-blog-api" element={<Main posts={posts} />} />
+          <Route path="/odin-blog-api/" element={<Main posts={posts} />} />
           {posts
             ? posts.map((post) => (
                 <Route
