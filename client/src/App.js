@@ -7,6 +7,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState();
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      setTheme(localStorage.getItem("theme"));
+    }
+  }, []);
 
   // read/get all posts
   useEffect(() => {
@@ -21,8 +33,8 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Header />
+      <div className="App" id={theme}>
+        <Header toggleTheme={toggleTheme} theme={theme} />
         <Routes>
           <Route path="/odin-blog-api/" element={<Main posts={posts} />} />
           {posts
