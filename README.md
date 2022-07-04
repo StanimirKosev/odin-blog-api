@@ -15,7 +15,7 @@ Goal: Create an API only backend with two front-ends, one for reading and commen
 - Dark Theme
 - Mobile Responsivness
 
-[Client demo](https://stanimirkosev.github.io/odin-blog-api/) :wave:
+## [Client demo](https://stanimirkosev.github.io/odin-blog-api/) :wave:
 
 ## The frontend for writing,editing and publishing. (cms folder)
 
@@ -23,4 +23,4 @@ Goal: Create an API only backend with two front-ends, one for reading and commen
 
 ## The frontend for reading and writing comments. (client folder)
 
-![client gif](./views/gifs/client.gif)
+![client gif](./views/gifs/client-gif.gif)
