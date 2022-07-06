@@ -295,6 +295,16 @@ button:hover {
   gap: 15px;
 }
 
+.loading-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dark .loading-circle {
+  color: white;
+}
+
 @media (max-width: 1500px) {
   .main-container {
     margin: 0 180px;

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [posts, setPosts] = useState();
   const [theme, setTheme] = useState("light");
+  const [loading, setLoading] = useState(true);
 
   const toggleTheme = () => {
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
@@ -22,13 +23,19 @@ function App() {
 
   // read/get all posts
   useEffect(() => {
-    fetch("https://boiling-woodland-03730.herokuapp.com/api/posts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setPosts(data.posts);
-      });
+    setLoading(true);
+    try {
+      fetch("https://boiling-woodland-03730.herokuapp.com/api/posts")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setLoading(false);
+          setPosts(data.posts);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   }, []);
 
   return (
@@ -36,7 +43,10 @@ function App() {
       <div className="App" id={theme}>
         <Header toggleTheme={toggleTheme} theme={theme} />
         <Routes>
-          <Route path="/odin-blog-api/" element={<Main posts={posts} />} />
+          <Route
+            path="/odin-blog-api/"
+            element={<Main posts={posts} loading={loading} />}
+          />
           {posts
             ? posts.map((post) => (
                 <Route
